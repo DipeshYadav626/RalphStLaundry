@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ralph St Laundry - Account</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="site-branding">
+            <a href="index.html" class="site-logo">
+                <img src="Image/logo-main.png" alt="Ralph St Laundry Logo" class="logo">
+            </a>
+        </div>
+        <div class="title">
+            <h1><a href="index.html">Ralph St Laundry</a></h1>
+        </div>
+        <nav class="site-navigation">
+            <ul class="menu">
+                <li class="menu-item"><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li class="menu-item"><a href="about.html"><i class="fa-solid fa-info-circle"></i> About</a></li>
+                <li class="menu-item"><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+                <li class="menu-item"><a href="Rental.html"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
+                <li class="menu-item"><a href="account.html"><i class="fa-solid fa-user"></i> Account</a></li>
+                <li class="menu-item">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div id="gnav">
+                        <nav class="globalMenuSp">
+                            <ul>
+                                <li><a href="signup.html">Sign UP</a></li>
+                                <li><a href="login.html">Log In</a></li>
+                                <li><a href="PrivacyPolicy.html">Privacy Policy</a></li>
+                                <li><a href="laundrySolution.html">Laundry solutions</a></li>
+                                <li><a href="Capabilities.html">Services</a></li>
+                                <li><a href="Review.html">Review</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+     <!-- Banner Section -->
+  <section class="banner">
+    <img src="Image/ls.png" alt="Linen Rental Banner" class="banner-img">
+  </section>
+
+    <!-- Account Page Content -->
+    <div class="account-page-container">
+        <div class="account-sidebar">
+            <div class="account-profile">
+                <img src="Image/download.png" alt="Profile Picture" class="profile-picture">
+                <h2 id="account-name">Loading...</h2>
+            </div>
+            <ul class="account-menu">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Orders</a></li>
+                <li><a href="#">Account Details</a></li>
+                <li><a href="#" id="logout-link">Logout</a></li>
+            </ul>
+        </div>
+        <div class="account-content">
+            <div class="account-overview">
+                <h2>Account</h2>
+                <p><strong>Email:</strong> <span id="account-email">Loading...</span></p>
+                <p><strong>Address:</strong> <span id="account-address">Loading...</span></p>
+                <p><strong>Contact Number:</strong> <span id="account-contact">Loading...</span></p>
+            </div>
+
+            <div class="account-orders">
+                <h2>Your Orders</h2>
+                <div id="user-orders"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js"></script>
+
+    <!-- jQuery and Custom Scripts -->
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous">
+    </script>
+    <script src="Script.js"></script>
+    <script type="module" src="auth.js"></script>
+    <script type="module" src="Account.js"></script>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Ralph St<span class="highlight"> Laundry</span></h3>
+                <p>Ralph St Laundry offers professional laundry and linen hire services with advanced equipment to ensure quality care. We provide convenient, reliable, and hygienic solutions, giving our clients the best in washing, drying, and folding.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Get In Touch</h3>
+                <p>Contact us for reliable laundry services and friendly customer support.</p>
+                <p><i class="fa-solid fa-location-dot"></i> 2A Ralph St Alexandria NSW, 2015</p>
+                <p><i class="fa-solid fa-phone"></i> +61 9317 3250</p>
+                <p><i class="fa-solid fa-envelope"></i> ralphstlaundry@gmail.com</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="quick-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="Capabilities.html">Services</a></li>
+                    <li><a href="account.html">Account</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Newsletter</h3>
+                <form id="newsletter-form">
+                    <input type="text" id="newsletter-name" placeholder="Your Name" required>
+                    <input type="email" id="newsletter-email" placeholder="Your Email" required>
+                    <button type="submit" class="btn-submit">Submit Now</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; Ralph St Laundry. All Rights Reserved. Designed by <a href="#">Dipesh</a></p>
+        </div>
+    </footer>
+</body>
+</html>
